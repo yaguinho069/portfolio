@@ -1,0 +1,240 @@
+/* RESET E CONFIGURAÇÕES DE TIPOGRAFIA MINIMALISTA */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-text: #111;        /* Preto para texto principal */
+    --secondary-text: #555;      /* Cinza escuro para parágrafos */
+    --accent-color: #007bff;     /* Azul sutil para links e interações */
+    --background-color: #ffffff; /* Fundo branco limpo */
+    --light-gray: #f8f8f8;       /* Cinza muito claro para seções */
+    --border-color: #e0e0e0;     /* Linhas de separação sutis */
+    --font-family-base: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--primary-text);
+    font-family: var(--font-family-base);
+    line-height: 1.6;
+    letter-spacing: 0.02em; /* Pequeno espaçamento de letra para elegância */
+}
+
+/* --- TÍTULOS E SEÇÕES GERAIS --- */
+h1, h2, h3 {
+    font-weight: 300; /* Títulos mais leves para elegância */
+    margin-bottom: 0.5em;
+    color: var(--primary-text);
+}
+
+a {
+    color: var(--primary-text);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+section {
+    padding: 80px 20px; /* Mais espaço vertical para um visual arejado */
+    max-width: 1000px; 
+    margin: 0 auto;
+}
+
+/* --- HEADER/NAVEGAÇÃO --- */
+header {
+    background-color: var(--background-color);
+    border-bottom: 1px solid var(--border-color); /* Linha divisória fina */
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: var(--primary-text);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+/* --- SEÇÃO HERO/SOBRE MIM --- */
+.hero {
+    min-height: 70vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 200; /* Ultra-leve para destaque elegante */
+    margin-bottom: 5px;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--secondary-text);
+    margin-bottom: 30px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-bottom: 40px;
+    color: var(--secondary-text);
+}
+
+.button {
+    display: inline-block;
+    border: 1px solid var(--primary-text); /* Botão com borda, sem fundo */
+    color: var(--primary-text);
+    background-color: transparent;
+    padding: 12px 30px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    transition: all 0.3s;
+}
+
+.button:hover {
+    background-color: var(--primary-text);
+    color: var(--background-color);
+}
+
+/* --- SEÇÃO PROJETOS --- */
+.projects {
+    background-color: var(--light-gray);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.projects h2 {
+    font-weight: 400;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.project-card {
+    background-color: var(--background-color);
+    padding: 30px;
+    border: 1px solid var(--border-color); /* Borda fina */
+    transition: border-color 0.3s;
+}
+
+.project-card:hover {
+    border-color: var(--accent-color); /* Destaca ao passar o mouse */
+}
+
+.project-card h3 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    color: var(--secondary-text);
+    margin-bottom: 20px;
+}
+
+.project-card a {
+    color: var(--accent-color);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+/* --- SEÇÃO CONTATO --- */
+.contact {
+    text-align: center;
+}
+
+.contact ul {
+    list-style: none;
+    margin-top: 30px;
+    padding: 0;
+}
+
+.contact li {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.contact li strong {
+    font-weight: 500;
+    color: var(--primary-text);
+}
+
+
+/* --- RODAPÉ --- */
+footer {
+    background-color: var(--primary-text);
+    color: var(--background-color);
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* --- RESPONSIVIDADE BÁSICA --- */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    section {
+        padding: 60px 20px;
+    }
+}
