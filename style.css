@@ -1,4 +1,4 @@
-/* RESET E CONFIGURAÇÕES DE TIPOGRAFIA MINIMALISTA */
+/* RESET E CORES DARK MODE */
 * {
     margin: 0;
     padding: 0;
@@ -6,65 +6,75 @@
 }
 
 :root {
-    --primary-text: #111;        /* Preto para texto principal */
-    --secondary-text: #555;      /* Cinza escuro para parágrafos */
-    --accent-color: #007bff;     /* Azul sutil para links e interações */
-    --background-color: #ffffff; /* Fundo branco limpo */
-    --light-gray: #f8f8f8;       /* Cinza muito claro para seções */
-    --border-color: #e0e0e0;     /* Linhas de separação sutis */
+    /* Cores Dark Mode */
+    --background-dark: #0f0a1c; /* Azul/Roxo Escuro Profundo */
+    --text-light: #f0f0f0;      /* Texto Branco */
+    --accent-purple: #9b59b6;   /* Roxo Principal para Destaque */
+    --accent-blue: #3498db;     /* Azul Secundário */
+    --subtle-gray: #7f8c8d;     /* Cinza Subtil para Descrições */
     --font-family-base: 'Inter', sans-serif;
+    
+    /* Efeito Neon */
+    --neon-glow: 0 0 5px var(--accent-purple), 0 0 10px var(--accent-purple);
 }
 
 body {
-    background-color: var(--background-color);
-    color: var(--primary-text);
+    background: var(--background-dark);
+    color: var(--text-light);
     font-family: var(--font-family-base);
     line-height: 1.6;
-    letter-spacing: 0.02em; /* Pequeno espaçamento de letra para elegância */
-}
-
-/* --- TÍTULOS E SEÇÕES GERAIS --- */
-h1, h2, h3 {
-    font-weight: 300; /* Títulos mais leves para elegância */
-    margin-bottom: 0.5em;
-    color: var(--primary-text);
+    /* Linhas e Gráficos de Fundo (Simulação) */
+    background-image: radial-gradient(circle at center, #1b0f33 1px, transparent 1px), 
+                      linear-gradient(to right, #1b0f33 1px, transparent 1px), 
+                      linear-gradient(to bottom, #1b0f33 1px, transparent 1px);
+    background-size: 50px 50px; /* Tamanho da grade */
 }
 
 a {
-    color: var(--primary-text);
+    color: var(--text-light);
     text-decoration: none;
-    transition: color 0.2s;
+    transition: color 0.3s;
 }
 
 section {
-    padding: 80px 20px; /* Mais espaço vertical para um visual arejado */
-    max-width: 1000px; 
+    padding: 80px 20px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
-/* --- HEADER/NAVEGAÇÃO --- */
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.8rem;
+    color: var(--accent-purple);
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* --- HEADER/NAVEGAÇÃO (Clean Dark) --- */
 header {
-    background-color: var(--background-color);
-    border-bottom: 1px solid var(--border-color); /* Linha divisória fina */
+    background-color: transparent;
     padding: 20px 0;
     position: sticky;
     top: 0;
     z-index: 100;
+    border-bottom: 1px solid #1c0e3a; /* Borda quase invisível */
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
 .logo {
-    font-size: 1.4rem;
-    font-weight: 500;
-    letter-spacing: 0.05em;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--accent-blue);
 }
 
 nav ul {
@@ -76,114 +86,146 @@ nav ul li {
     margin-left: 30px;
 }
 
-nav ul li a {
-    color: var(--primary-text);
-    text-transform: uppercase;
-    font-size: 0.9rem;
-}
-
 nav ul li a:hover {
-    color: var(--accent-color);
+    color: var(--accent-purple);
+    text-shadow: 0 0 5px rgba(155, 89, 182, 0.5); /* Efeito brilho */
 }
 
 /* --- SEÇÃO HERO/SOBRE MIM --- */
 .hero {
-    min-height: 70vh;
-    text-align: center;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    text-align: center;
+    padding-top: 50px;
+}
+
+/* Simulação da Imagem de Perfil */
+.profile-image {
+    width: 150px;
+    height: 150px;
+    background-color: #2c3e50;
+    border-radius: 50%;
+    margin-bottom: 40px;
+    border: 3px solid var(--accent-purple);
+    box-shadow: var(--neon-glow); /* Brilho de destaque */
+    /* Se você usar uma imagem real, o CSS da imagem seria similar: */
+    /* .avatar { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; } */
 }
 
 .hero h1 {
     font-size: 3.5rem;
-    font-weight: 200; /* Ultra-leve para destaque elegante */
-    margin-bottom: 5px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    /* Gradiente e Brilho no Nome */
+    background: linear-gradient(90deg, #e74c3c, var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px rgba(155, 89, 182, 0.5);
 }
 
 .hero h2 {
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: var(--secondary-text);
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--accent-blue);
     margin-bottom: 30px;
 }
 
 .hero p {
     font-size: 1.1rem;
-    max-width: 600px;
+    max-width: 700px;
     margin-bottom: 40px;
-    color: var(--secondary-text);
+    color: var(--subtle-gray);
+}
+
+/* Tags de Habilidades */
+.tags {
+    margin-bottom: 20px;
+}
+
+.tag {
+    display: inline-block;
+    background-color: #2c3e50; /* Fundo escuro */
+    color: var(--accent-blue);
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin: 5px;
+    font-size: 0.8rem;
+    border: 1px solid var(--accent-blue);
 }
 
 .button {
     display: inline-block;
-    border: 1px solid var(--primary-text); /* Botão com borda, sem fundo */
-    color: var(--primary-text);
-    background-color: transparent;
+    background: var(--accent-purple);
+    color: var(--text-light);
     padding: 12px 30px;
     text-transform: uppercase;
     font-size: 0.9rem;
     letter-spacing: 0.1em;
+    border-radius: 5px;
+    border: none;
+    box-shadow: var(--neon-glow);
     transition: all 0.3s;
 }
 
 .button:hover {
-    background-color: var(--primary-text);
-    color: var(--background-color);
+    background: #8e44ad; /* Roxo mais escuro */
+    box-shadow: 0 0 15px var(--accent-purple);
 }
 
 /* --- SEÇÃO PROJETOS --- */
 .projects {
-    background-color: var(--light-gray);
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-}
-
-.projects h2 {
-    font-weight: 400;
-    font-size: 1.8rem;
-    text-transform: uppercase;
+    background-color: transparent;
 }
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
 .project-card {
-    background-color: var(--background-color);
+    background-color: #1a0d33; /* Fundo de card mais escuro */
     padding: 30px;
-    border: 1px solid var(--border-color); /* Borda fina */
-    transition: border-color 0.3s;
+    border-radius: 10px;
+    border: 1px solid #3c1e69; /* Borda roxa sutil */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, border-color 0.3s;
 }
 
 .project-card:hover {
-    border-color: var(--accent-color); /* Destaca ao passar o mouse */
+    transform: translateY(-5px);
+    border-color: var(--accent-purple);
+    box-shadow: 0 4px 20px rgba(155, 89, 182, 0.2);
 }
 
 .project-card h3 {
     font-size: 1.4rem;
-    font-weight: 400;
+    font-weight: 500;
+    color: var(--text-light);
     margin-bottom: 10px;
 }
 
 .project-card p {
-    color: var(--secondary-text);
+    color: var(--subtle-gray);
     margin-bottom: 20px;
 }
 
 .project-card a {
-    color: var(--accent-color);
+    color: var(--accent-blue);
     font-weight: 500;
     text-transform: uppercase;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
 }
 
 /* --- SEÇÃO CONTATO --- */
 .contact {
     text-align: center;
+}
+
+.contact p {
+    color: var(--subtle-gray);
 }
 
 .contact ul {
@@ -199,19 +241,18 @@ nav ul li a:hover {
 
 .contact li strong {
     font-weight: 500;
-    color: var(--primary-text);
+    color: var(--text-light);
 }
 
 
 /* --- RODAPÉ --- */
 footer {
-    background-color: var(--primary-text);
-    color: var(--background-color);
+    background-color: #0b0714;
+    color: var(--subtle-gray);
     text-align: center;
-    padding: 30px 0;
+    padding: 20px 0;
     font-size: 0.85rem;
     letter-spacing: 0.1em;
-    text-transform: uppercase;
 }
 
 /* --- RESPONSIVIDADE BÁSICA --- */
@@ -232,9 +273,5 @@ footer {
 
     nav ul li {
         margin: 0 10px;
-    }
-
-    section {
-        padding: 60px 20px;
     }
 }
